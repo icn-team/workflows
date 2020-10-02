@@ -26,9 +26,7 @@ jobs:
       - name: "Build artifacts"
         shell: bash
         run: |
-          echo bash scripts/build-packages.sh
-          mkdir build
-          echo "Binary file" > build/build.deb
+          bash scripts/build-packages.sh
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -42,13 +40,157 @@ jobs:
           release_name: "${{ github.event.inputs.release_version }}"
           draft: false
           prerelease: false
-      - name: Upload Release Assets - Debs
+      - name: Upload Release Assets - ${{ asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-light_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/build.deb"
-          asset_name: "build.deb"
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-plugin_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-utils-memif_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicn-dev_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicn_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-memif-dev_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-memif-dev_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-memif_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-utils_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-dev_20.05-release_amd64.dev"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-dev_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport_20.05-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - ${{ asset }}
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-memif-dev_20.05-release_amd64.de"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ asset }}"
+          asset_name: "${{ asset }}"
           asset_content_type: application/octet-stream
