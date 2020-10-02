@@ -40,7 +40,7 @@ jobs:
           release_name: "${{ github.event.inputs.release_version }}"
           draft: false
           prerelease: false
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-1
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -51,7 +51,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-2
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -62,7 +62,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-3
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -73,7 +73,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-4
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -84,7 +84,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-5
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -95,7 +95,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-6
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -106,7 +106,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-7
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -117,7 +117,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-8
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -128,7 +128,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-9
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -139,7 +139,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-10
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -150,7 +150,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-11
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -161,7 +161,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-12
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -172,7 +172,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-13
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -183,7 +183,7 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - ${{ env.asset }}
+      - name: Upload Release Assets
         id: upload-release-asset-14
         uses: actions/upload-release-asset@v1.0.2
         env:
