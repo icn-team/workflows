@@ -25,7 +25,9 @@ jobs:
       - name: "Build artifacts"
         shell: bash
         run: |
-          bash scripts/build-packages.sh
+          echo bash scripts/build-packages.sh
+          mkdir build
+          touch build/build.deb
       - name: Create Release
         id: create-release
         uses: actions/create-release@v1
