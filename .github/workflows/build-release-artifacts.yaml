@@ -29,16 +29,16 @@ jobs:
           mkdir build
           touch build/build.deb
       - name: Create Release
-        id: create-release
+        id: create_release
         uses: actions/create-release@v1
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           repo: "hicn"
           owner: "icn-team"
-          tag_name: ${{ env.tag }}
-          commitish: master
-          release_name: ${{ github.event.inputs.release_version }}
+          tag_name: "${{ env.tag }}"
+          commitish: "${{ env.tag }}"
+          release_name: "${{ github.event.inputs.release_version }}"
           draft: false
           prerelease: false
       - name: Upload Release Assets - Debs
