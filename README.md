@@ -1,8 +1,8 @@
-# workflows
+# Workflows
 
 This repo stores workflow config files.
 
-Workflow List:
+# Workflow List:
 
 ## Sync Fork Workflow
 
