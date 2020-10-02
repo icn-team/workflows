@@ -41,7 +41,7 @@ jobs:
           draft: false
           prerelease: false
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -52,7 +52,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -63,7 +63,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -74,7 +74,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -85,7 +85,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -96,7 +96,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -107,7 +107,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -118,7 +118,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -129,7 +129,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -140,7 +140,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -151,7 +151,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -162,7 +162,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -173,7 +173,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -184,7 +184,7 @@ jobs:
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
       - name: Upload Release Assets - ${{ env.asset }}
-        id: upload-release-asset
+        id: upload-release-asset-${{ env.asset }}
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
