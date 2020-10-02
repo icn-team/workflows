@@ -21,6 +21,7 @@ jobs:
         run: |
           NEXT_TAG=$(git tag --contains=v${{ github.event.inputs.release_version }} | sed -n 2p)
           git checkout ${NEXT_TAG}
+          echo "tag=${NEXT_TAG}" >> $GITHUB_ENV
       - name: "Build artifacts"
         shell: bash
         run: |
@@ -31,8 +32,8 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          repo: "icn-team/hicn"
-          tag_name: ${{ github.ref }}
+          repo: "hicn"
+          tag_name: ${{ tag }}
           release_name: Release ${{ github.event.inputs.release_version }}
           draft: false
           prerelease: false
