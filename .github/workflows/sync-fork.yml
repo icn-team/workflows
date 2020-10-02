@@ -1,10 +1,8 @@
-name: Sync Fork
+\name: Sync Fork
 
-on: [workflow_dispatch]
-
-# on:
-#   schedule:
-#   - cron: '*/30 * * * *'
+on:
+  schedule:
+  - cron: '*/30 * * * *'
 
 jobs:
   sync:
@@ -12,7 +10,7 @@ jobs:
     steps:
       - uses: TobKed/github-forks-sync-action@v0.2.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.API_TOKEN_GITHUB }}
           upstream_repository: FDio/hicn
           target_repository: icn-team/hicn
           upstream_branch: master
