@@ -28,7 +28,7 @@ jobs:
         run: |
           echo bash scripts/build-packages.sh
           mkdir build
-          touch build/build.deb
+          echo "Binary file" > build/build.deb
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
