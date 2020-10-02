@@ -37,7 +37,7 @@ jobs:
           repo: "hicn"
           owner: "icn-team"
           tag_name: ${{ env.tag }}
-          commitish: ${{ env.tag }}
+          commitish: 97ba378
           release_name: Release ${{ github.event.inputs.release_version }}
           draft: false
           prerelease: false
