@@ -12,7 +12,7 @@ jobs:
         with:
           repository: "FDio/hicn"
           fetch-depth: 0
-          ref: v20.09
+          ref: test
       - name: "Build artifacts and publish"
         shell: bash
         run: |
