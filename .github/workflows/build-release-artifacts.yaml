@@ -40,6 +40,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          upload_url: https://uploads.github.com/repos/icn-team/workflows/releases/21250805/assets{?name,label}
-          asset_path: ./build
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/"
           asset_name: "*.deb"
