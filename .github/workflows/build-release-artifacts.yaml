@@ -40,7 +40,7 @@ jobs:
           release_name: "${{ github.event.inputs.release_version }}"
           draft: false
           prerelease: false
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -48,10 +48,10 @@ jobs:
           asset: "hicn-light_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -59,10 +59,10 @@ jobs:
           asset: "hicn-plugin_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -70,10 +70,10 @@ jobs:
           asset: "hicn-utils-memif_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -81,10 +81,10 @@ jobs:
           asset: "libhicn-dev_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -92,10 +92,10 @@ jobs:
           asset: "libhicn_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -103,10 +103,10 @@ jobs:
           asset: "libhicnctrl-memif-dev_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -114,10 +114,10 @@ jobs:
           asset: "libhicntransport-memif-dev_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -125,10 +125,10 @@ jobs:
           asset: "libhicntransport-memif_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -136,10 +136,10 @@ jobs:
           asset: "hicn-utils_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -147,10 +147,10 @@ jobs:
           asset: "libhicnctrl-dev_20.05-release_amd64.dev"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -158,10 +158,10 @@ jobs:
           asset: "libhicnctrl_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -169,10 +169,10 @@ jobs:
           asset: "libhicntransport-dev_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -180,10 +180,10 @@ jobs:
           asset: "libhicntransport_20.05-release_amd64.deb"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
+      - name: Upload Release Assets - ${{ env.asset }}
         id: upload-release-asset
         uses: actions/upload-release-asset@v1.0.2
         env:
@@ -191,6 +191,6 @@ jobs:
           asset: "libhicnctrl-memif-dev_20.05-release_amd64.de"
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: "./build/${{ asset }}"
-          asset_name: "${{ asset }}"
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
