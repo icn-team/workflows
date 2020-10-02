@@ -2,8 +2,8 @@
 
 This repo stores workflow config files.
 
-# Workflow List:
+## Workflow List:
 
-## Sync Fork Workflow
+### Sync Fork Workflow
 
 Synchronize the target repository icn-team/hicn with FDio/hich.
