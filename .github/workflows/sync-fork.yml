@@ -18,3 +18,21 @@ jobs:
           target_branch: master
           tags: true
           force: true
+      - uses: TobKed/github-forks-sync-action@v0.2.0
+        with:
+          github_token: ${{ secrets.API_TOKEN_GITHUB }}
+          upstream_repository: FDio/hicn
+          target_repository: icn-team/hicn
+          upstream_branch: host-stack
+          target_branch: host-stack
+          tags: true
+          force: true
+      - uses: TobKed/github-forks-sync-action@v0.2.0
+        with:
+          github_token: ${{ secrets.API_TOKEN_GITHUB }}
+          upstream_repository: FDio/hicn
+          target_repository: icn-team/hicn
+          upstream_branch: hicn-light-ng
+          target_branch: hicn-light-ng
+          tags: true
+          force: true
