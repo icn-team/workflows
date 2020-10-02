@@ -33,7 +33,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
         with:
           repo: "hicn"
-          tag_name: ${{ tag }}
+          tag_name: ${{ env.tag }}
           release_name: Release ${{ github.event.inputs.release_version }}
           draft: false
           prerelease: false
