@@ -15,14 +15,10 @@ jobs:
         with:
           repository: "icn-team/hicn"
           ref: v${{ github.event.inputs.release_version }}-release
+      - name: "Analyze repository"
         shell: bash
         run: |
           echo "commitish=$(git rev-parse HEAD)" >> $GITHUB_ENV
-      - name: "Build artifacts"
-        shell: bash
-        run: |
-          bash scripts/build-packages.sh
-          ls scripts
       - name: Create Release
         id: create_release
         uses: actions/create-release@v1
@@ -36,6 +32,11 @@ jobs:
           release_name: "${{ github.event.inputs.release_version }}"
           draft: false
           prerelease: false
+      - name: "Build artifacts"
+        shell: bash
+        run: |
+          bash scripts/build-packages.sh
+          ls scripts
       - name: Upload Release Assets - hicn-light
         id: upload-release-asset-hicn-light
         uses: actions/upload-release-asset@v1.0.2
