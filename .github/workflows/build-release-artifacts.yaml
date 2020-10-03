@@ -14,8 +14,10 @@ jobs:
         uses: actions/checkout@master
         with:
           repository: "icn-team/hicn"
-          fetch-depth: 0
           ref: v${{ github.event.inputs.release_version }}-release
+        shell: bash
+        run: |
+          echo "commitish=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: "Build artifacts"
         shell: bash
         run: |
@@ -30,6 +32,7 @@ jobs:
           repo: "hicn"
           owner: "icn-team"
           tag_name: "v${{ github.event.inputs.release_version }}-release"
+          commitish: "${{ env.commitish }}"
           release_name: "${{ github.event.inputs.release_version }}"
           draft: false
           prerelease: false
