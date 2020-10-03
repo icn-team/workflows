@@ -15,16 +15,7 @@ jobs:
         with:
           repository: "icn-team/hicn"
           fetch-depth: 0
-          ref: v${{ github.event.inputs.release_version }}
-      - name: "Check if release ${{ github.event.inputs.release_version }} can be built"
-        shell: bash
-        run: |
-          NEXT_TAG=$(git tag --contains=v${{ github.event.inputs.release_version }} | sed -n 2p)
-          [[ -z "${NEXT_TAG}" ]] && exit 1
-          echo "Movin to next tag ${NEXT_TAG}, which is the last commit associate with VPP ${{ github.event.inputs.release_version }}."
-          git checkout ${NEXT_TAG}
-          echo "tag=${NEXT_TAG}" >> $GITHUB_ENV
-          echo "commitish=$(git rev-parse HEAD)" >> $GITHUB_ENV
+          ref: v${{ github.event.inputs.release_version }}-release
       - name: "Build artifacts"
         shell: bash
         run: |
