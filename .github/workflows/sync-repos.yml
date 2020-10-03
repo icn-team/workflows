@@ -1,0 +1,17 @@
+name: Sync Repos
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+jobs:
+  git-mirror:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: wearerequired/git-mirror-action@v1
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.HICN_DEPLOY_KEY }}
+        with:
+          source-repo: "git@github.com:FDio/hicn.git"
+          destination-repo: "git@github.com:icn-team/hicn.git"
