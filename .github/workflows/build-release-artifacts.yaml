@@ -41,8 +41,8 @@ jobs:
           release_name: "${{ github.event.inputs.release_version }}"
           draft: false
           prerelease: false
-      - name: Upload Release Assets
-        id: upload-release-asset-1
+      - name: Upload Release Assets - hicn-light
+        id: upload-release-asset-hicn-light
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -52,8 +52,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-2
+      - name: Upload Release Assets - hicn-plugin
+        id: upload-release-asset-hicn-plugin
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -63,8 +63,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-3
+      - name: Upload Release Assets - hicn-utils-memif
+        id: upload-release-asset-hicn-utils-memif
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -74,8 +74,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-4
+      - name: Upload Release Assets - libhicn-dev
+        id: upload-release-asset-libhicn-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -85,8 +85,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-5
+      - name: Upload Release Assets - libhicn
+        id: upload-release-asset-libhicn
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -96,8 +96,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-6
+      - name: Upload Release Assets - libhicnctrl-memif-dev
+        id: upload-release-asset-libhicnctrl-memif-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -107,8 +107,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-7
+      - name: Upload Release Assets - libhicntransport-memif-dev
+        id: upload-release-asset-libhicntransport-memif-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -118,8 +118,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-8
+      - name: Upload Release Assets - libhicntransport-memif
+        id: upload-release-asset-libhicntransport-memif
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -129,8 +129,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-9
+      - name: Upload Release Assets - hicn-utils
+        id: upload-release-asset-hicn-utils
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -140,8 +140,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-10
+      - name: Upload Release Assets - libhicnctrl-dev
+        id: upload-release-asset-libhicnctrl-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -151,8 +151,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-11
+      - name: Upload Release Assets - libhicnctrl
+        id: upload-release-asset-libhicnctrl
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -162,8 +162,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-12
+      - name: Upload Release Assets - libhicntransport-dev
+        id: upload-release-asset-libhicntransport-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -173,8 +173,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-13
+      - name: Upload Release Assets - libhicntransport
+        id: upload-release-asset-libhicntransport
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -184,8 +184,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-14
+      - name: Upload Release Assets - facemgr
+        id: upload-release-asset-facemgr
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -195,8 +195,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-14
+      - name: Upload Release Assets - hicn-apps-dev
+        id: upload-release-asset-hicn-apps-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -206,8 +206,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-14
+      - name: Upload Release Assets - hicn-plugin-dev
+        id: upload-release-asset-hicn-plugin-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -217,8 +217,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-14
+      - name: Upload Release Assets - hicn-apps-memif
+        id: upload-release-asset-hicn-apps-memif
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -228,8 +228,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-14
+      - name: Upload Release Assets - hicn-apps-memif-dev
+        id: upload-release-asset-hicn-apps-memif-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -239,8 +239,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-14
+      - name: Upload Release Assets - libhicnctrl-memif
+        id: upload-release-asset-libhicnctrl-memif
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -250,8 +250,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-14
+      - name: Upload Release Assets - hicn-apps
+        id: upload-release-asset-hicn-apps
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
@@ -261,8 +261,8 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets
-        id: upload-release-asset-14
+      - name: "Upload Release Assets - hicn-collectd-plugins"
+        id: upload-release-asset-hicn-collectd-plugins
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
