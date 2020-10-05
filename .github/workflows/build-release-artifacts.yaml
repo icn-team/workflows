@@ -602,7 +602,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-light_${{ github.event.inputs.release_version }}-release_${{ env.architecture }}.rpm"
+          asset: "hicn-light-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -613,7 +613,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-plugin_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-plugin-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -624,7 +624,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-utils-memif_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-utils-memif-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -635,7 +635,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicn-dev_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicn-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -646,7 +646,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicn_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicn-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -657,7 +657,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicnctrl-memif-dev_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicnctrl-memif-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -668,7 +668,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicntransport-memif-dev_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicntransport-memif-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -679,7 +679,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicntransport-memif_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicntransport-memif-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -690,7 +690,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-utils_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-utils-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -701,7 +701,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicnctrl-dev_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicnctrl-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -712,7 +712,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicnctrl_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicnctrl-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -723,7 +723,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicntransport-dev_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicntransport-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -734,7 +734,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicntransport_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicntransport-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -745,7 +745,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "facemgr_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "facemgr-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -756,7 +756,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-apps-dev_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-apps-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -767,7 +767,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-plugin-dev_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-plugin-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -778,7 +778,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-apps-memif_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-apps-memif-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -789,7 +789,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-apps-memif-dev_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-apps-memif-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -800,7 +800,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicnctrl-memif_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicnctrl-memif-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -811,7 +811,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-apps_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-apps-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -822,7 +822,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-collectd-plugins_${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-collectd-plugins-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
