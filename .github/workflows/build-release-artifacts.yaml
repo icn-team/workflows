@@ -602,7 +602,7 @@ jobs:
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-light_${{ github.event.inputs.release_version }}-release_${{ env.architecture }}.deb"
+          asset: "hicn-light_${{ github.event.inputs.release_version }}-release_${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
