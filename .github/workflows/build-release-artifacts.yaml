@@ -106,12 +106,12 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - libhicn-devel
-        id: upload-release-asset-libhicn-devel
+      - name: Upload Release Assets - libhicn-dev
+        id: upload-release-asset-libhicn-dev
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicn-devel_${{ github.event.inputs.release_version }}-release_${{ env.architecture }}.deb"
+          asset: "libhicn-dev_${{ github.event.inputs.release_version }}-release_${{ env.architecture }}.deb"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
