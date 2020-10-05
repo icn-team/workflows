@@ -8,7 +8,8 @@ on:
 
 jobs:
   build-bionic:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
+    container: ubuntu:bionic
     steps:
       - name: "Checkout Hicn Repository"
         uses: actions/checkout@master
