@@ -35,7 +35,7 @@ jobs:
       - name: Create Artifact
         shell: bash
         run: |
-          ${{ steps.create_release.outputs.upload_url }} > upload_url.txt
+          echo ${{ steps.create_release.outputs.upload_url }} > upload_url.txt
       - name: Upload Artifact
         uses: actions/upload-artifact@v2
         with:
