@@ -106,12 +106,12 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - libhicn-dev
-        id: upload-release-asset-libhicn-dev
+      - name: Upload Release Assets - libhicn-devel
+        id: upload-release-asset-libhicn-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicn-dev_${{ github.event.inputs.release_version }}-release_${{ env.architecture }}.deb"
+          asset: "libhicn-devel_${{ github.event.inputs.release_version }}-release_${{ env.architecture }}.deb"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -630,12 +630,12 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - libhicn-dev
-        id: upload-release-asset-libhicn-dev
+      - name: Upload Release Assets - libhicn-devel
+        id: upload-release-asset-libhicn-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicn-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicn-devel-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -652,23 +652,23 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - libhicnctrl-memif-dev
-        id: upload-release-asset-libhicnctrl-memif-dev
+      - name: Upload Release Assets - libhicnctrl-memif-devel
+        id: upload-release-asset-libhicnctrl-memif-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicnctrl-memif-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicnctrl-memif-devel-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - libhicntransport-memif-dev
-        id: upload-release-asset-libhicntransport-memif-dev
+      - name: Upload Release Assets - libhicntransport-memif-devel
+        id: upload-release-asset-libhicntransport-memif-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicntransport-memif-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicntransport-memif-devel-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -696,12 +696,12 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - libhicnctrl-dev
-        id: upload-release-asset-libhicnctrl-dev
+      - name: Upload Release Assets - libhicnctrl-devel
+        id: upload-release-asset-libhicnctrl-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicnctrl-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicnctrl-devel-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -718,12 +718,12 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - libhicntransport-dev
-        id: upload-release-asset-libhicntransport-dev
+      - name: Upload Release Assets - libhicntransport-devel
+        id: upload-release-asset-libhicntransport-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "libhicntransport-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "libhicntransport-devel-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -751,23 +751,23 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - hicn-apps-dev
-        id: upload-release-asset-hicn-apps-dev
+      - name: Upload Release Assets - hicn-apps-devel
+        id: upload-release-asset-hicn-apps-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-apps-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-apps-devel-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - hicn-plugin-dev
-        id: upload-release-asset-hicn-plugin-dev
+      - name: Upload Release Assets - hicn-plugin-devel
+        id: upload-release-asset-hicn-plugin-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-plugin-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-plugin-devel-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
@@ -784,12 +784,12 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.distribution }}-${{ env.asset }}"
           asset_content_type: application/octet-stream
-      - name: Upload Release Assets - hicn-apps-memif-dev
-        id: upload-release-asset-hicn-apps-memif-dev
+      - name: Upload Release Assets - hicn-apps-memif-devel
+        id: upload-release-asset-hicn-apps-memif-devel
         uses: actions/upload-release-asset@v1.0.2
         env:
           GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
-          asset: "hicn-apps-memif-dev-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
+          asset: "hicn-apps-memif-devel-${{ github.event.inputs.release_version }}-release.${{ env.architecture }}.rpm"
         with:
           upload_url: ${{ env.upload_url }}
           asset_path: "./build/${{ env.asset }}"
