@@ -14,7 +14,7 @@ jobs:
       - name: Download git
         shell: bash
         run: |
-          apt-get update && apt-get -y install software-properties-common
+          apt-get update && apt-get -y install software-properties-common sudo
           add-apt-repository ppa:git-core/ppa
           apt-get update && apt-get -y install git
       - name: "Checkout Hicn Repository"
