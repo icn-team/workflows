@@ -11,6 +11,10 @@ jobs:
     runs-on: ubuntu-latest
     container: ubuntu:bionic
     steps:
+      - name: Download git
+        shell: bash
+        run: |
+          apt-get update && apt-get -y install git
       - name: "Checkout Hicn Repository"
         uses: actions/checkout@master
         with:
@@ -19,7 +23,6 @@ jobs:
       - name: "Analyze repository"
         shell: bash
         run: |
-          apt-get update && apt-get -y install git
           echo "commitish=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: Create Release
         id: create_release
