@@ -275,3 +275,538 @@ jobs:
           asset_path: "./build/${{ env.asset }}"
           asset_name: "${{ env.asset }}"
           asset_content_type: application/octet-stream
+  build-focal:
+    runs-on: ubuntu-latest
+    container: ubuntu:focal
+    steps:
+      - name: Download git
+        shell: bash
+        run: |
+          apt-get update && apt-get -y install software-properties-common sudo
+          add-apt-repository ppa:git-core/ppa
+          apt-get update && apt-get -y install git
+      - name: "Checkout Hicn Repository"
+        uses: actions/checkout@master
+        with:
+          repository: "icn-team/hicn"
+          ref: v${{ github.event.inputs.release_version }}-release
+      - name: "Analyze repository"
+        shell: bash
+        run: |
+          echo "commitish=$(git rev-parse HEAD)" >> $GITHUB_ENV
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          repo: "hicn"
+          owner: "icn-team"
+          tag_name: "v${{ github.event.inputs.release_version }}-release"
+          commitish: "${{ env.commitish }}"
+          release_name: "${{ github.event.inputs.release_version }} Ubuntu Focal"
+          draft: false
+          prerelease: false
+      - name: "Build artifacts"
+        shell: bash
+        run: |
+          bash scripts/build-packages.sh
+          ls scripts
+      - name: Upload Release Assets - hicn-light
+        id: upload-release-asset-hicn-light
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-light_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-plugin
+        id: upload-release-asset-hicn-plugin
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-plugin_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-utils-memif
+        id: upload-release-asset-hicn-utils-memif
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-utils-memif_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicn-dev
+        id: upload-release-asset-libhicn-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicn-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicn
+        id: upload-release-asset-libhicn
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicn_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicnctrl-memif-dev
+        id: upload-release-asset-libhicnctrl-memif-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-memif-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicntransport-memif-dev
+        id: upload-release-asset-libhicntransport-memif-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-memif-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicntransport-memif
+        id: upload-release-asset-libhicntransport-memif
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-memif_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-utils
+        id: upload-release-asset-hicn-utils
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-utils_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicnctrl-dev
+        id: upload-release-asset-libhicnctrl-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicnctrl
+        id: upload-release-asset-libhicnctrl
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicntransport-dev
+        id: upload-release-asset-libhicntransport-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicntransport
+        id: upload-release-asset-libhicntransport
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - facemgr
+        id: upload-release-asset-facemgr
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "facemgr_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-apps-dev
+        id: upload-release-asset-hicn-apps-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-apps-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-plugin-dev
+        id: upload-release-asset-hicn-plugin-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-plugin-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-apps-memif
+        id: upload-release-asset-hicn-apps-memif
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-apps-memif_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-apps-memif-dev
+        id: upload-release-asset-hicn-apps-memif-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-apps-memif-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicnctrl-memif
+        id: upload-release-asset-libhicnctrl-memif
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-memif_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-apps
+        id: upload-release-asset-hicn-apps
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-apps_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: "Upload Release Assets - hicn-collectd-plugins"
+        id: upload-release-asset-hicn-collectd-plugins
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-collectd-plugins_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+  build-centos7:
+    runs-on: ubuntu-latest
+    container: centos:7
+    steps:
+      - name: Download git
+        shell: bash
+        run: |
+          yum -y --nogpgcheck install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.7-1.x86_64.rpm
+          yum install -y --nogpgcheck git sudo
+      - name: "Checkout Hicn Repository"
+        uses: actions/checkout@master
+        with:
+          repository: "icn-team/hicn"
+          ref: v${{ github.event.inputs.release_version }}-release
+      - name: "Analyze repository"
+        shell: bash
+        run: |
+          echo "commitish=$(git rev-parse HEAD)" >> $GITHUB_ENV
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+        with:
+          repo: "hicn"
+          owner: "icn-team"
+          tag_name: "v${{ github.event.inputs.release_version }}-release"
+          commitish: "${{ env.commitish }}"
+          release_name: "${{ github.event.inputs.release_version }} Centos 7"
+          draft: false
+          prerelease: false
+      - name: "Build artifacts"
+        shell: bash
+        run: |
+          bash scripts/build-packages.sh
+          ls scripts
+      - name: Upload Release Assets - hicn-light
+        id: upload-release-asset-hicn-light
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-light_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-plugin
+        id: upload-release-asset-hicn-plugin
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-plugin_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-utils-memif
+        id: upload-release-asset-hicn-utils-memif
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-utils-memif_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicn-dev
+        id: upload-release-asset-libhicn-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicn-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicn
+        id: upload-release-asset-libhicn
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicn_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicnctrl-memif-dev
+        id: upload-release-asset-libhicnctrl-memif-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-memif-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicntransport-memif-dev
+        id: upload-release-asset-libhicntransport-memif-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-memif-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicntransport-memif
+        id: upload-release-asset-libhicntransport-memif
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-memif_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-utils
+        id: upload-release-asset-hicn-utils
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-utils_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicnctrl-dev
+        id: upload-release-asset-libhicnctrl-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicnctrl
+        id: upload-release-asset-libhicnctrl
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicntransport-dev
+        id: upload-release-asset-libhicntransport-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicntransport
+        id: upload-release-asset-libhicntransport
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicntransport_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - facemgr
+        id: upload-release-asset-facemgr
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "facemgr_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-apps-dev
+        id: upload-release-asset-hicn-apps-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-apps-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-plugin-dev
+        id: upload-release-asset-hicn-plugin-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-plugin-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-apps-memif
+        id: upload-release-asset-hicn-apps-memif
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-apps-memif_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-apps-memif-dev
+        id: upload-release-asset-hicn-apps-memif-dev
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-apps-memif-dev_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - libhicnctrl-memif
+        id: upload-release-asset-libhicnctrl-memif
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "libhicnctrl-memif_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: Upload Release Assets - hicn-apps
+        id: upload-release-asset-hicn-apps
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-apps_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
+      - name: "Upload Release Assets - hicn-collectd-plugins"
+        id: upload-release-asset-hicn-collectd-plugins
+        uses: actions/upload-release-asset@v1.0.2
+        env:
+          GITHUB_TOKEN: ${{ secrets.API_TOKEN_GITHUB }}
+          asset: "hicn-collectd-plugins_${{ github.event.inputs.release_version }}-release_amd64.deb"
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: "./build/${{ env.asset }}"
+          asset_name: "${{ env.asset }}"
+          asset_content_type: application/octet-stream
