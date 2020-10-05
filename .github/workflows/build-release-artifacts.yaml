@@ -19,6 +19,7 @@ jobs:
       - name: "Analyze repository"
         shell: bash
         run: |
+          apt-get update && apt-get install git
           echo "commitish=$(git rev-parse HEAD)" >> $GITHUB_ENV
       - name: Create Release
         id: create_release
