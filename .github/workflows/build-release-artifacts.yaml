@@ -575,7 +575,7 @@ jobs:
         shell: bash
         run: |
           yum -y --nogpgcheck install https://packages.endpoint.com/rhel/7/os/x86_64/endpoint-repo-1.7-1.x86_64.rpm
-          yum install -y --nogpgcheck git sudo wget
+          yum install -y --nogpgcheck git sudo wget python3
           echo "distribution=focal" >> $GITHUB_ENV
           echo "architecture=$(uname -m)" >> $GITHUB_ENV
       - name: "Checkout Hicn Repository"
