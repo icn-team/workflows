@@ -14,7 +14,7 @@ jobs:
       - name: Download git
         shell: bash
         run: |
-          sudo add-apt-repository ppa:git-core/ppa
+          add-apt-repository ppa:git-core/ppa
           apt-get update && apt-get -y install git
       - name: "Checkout Hicn Repository"
         uses: actions/checkout@master
