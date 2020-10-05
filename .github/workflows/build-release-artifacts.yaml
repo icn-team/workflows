@@ -583,11 +583,6 @@ jobs:
         with:
           repository: "icn-team/hicn"
           ref: v${{ github.event.inputs.release_version }}-release
-      - name: "Build artifacts"
-        shell: bash
-        run: |
-          bash scripts/build-packages.sh
-          ls scripts
       - name: Get Previous Job Artifacts
         uses: actions/download-artifact@v2
         with:
@@ -596,6 +591,11 @@ jobs:
         shell: bash
         run: |
           echo upload_url=$(cat upload_url.txt) >> ${GITHUB_ENV}
+      - name: "Build artifacts"
+        shell: bash
+        run: |
+          bash scripts/build-packages.sh
+          ls scripts
       - name: Upload Release Assets - hicn-light
         id: upload-release-asset-hicn-light
         uses: actions/upload-release-asset@v1.0.2
